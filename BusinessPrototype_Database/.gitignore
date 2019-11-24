@@ -1,0 +1,13 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+/BP.Database/bin
+/BP.Database/obj
+/BP.Database.Base/bin
+/BP.Database.Base/obj
+/BP.Database.Interfaces/bin
+/BP.Database.Interfaces/obj
+/Tests/BP.Database.Tests/bin
+/Tests/BP.Database.Tests/obj

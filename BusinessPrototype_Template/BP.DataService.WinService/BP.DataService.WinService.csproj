@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8CDC4D62-DFE1-4ED5-A686-E1A42647C359}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>BP.DataService.WinService</RootNamespace>
+    <AssemblyName>BP.DataService.WinService</AssemblyName>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BP.SDK, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\BP_Libs\BP.SDK.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\BP_Libs\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataService.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataService.Designer.cs">
+      <DependentUpon>DataService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="DataServiceInstaller.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataServiceInstaller.Designer.cs">
+      <DependentUpon>DataServiceInstaller.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DataServiceInstaller.resx">
+      <DependentUpon>DataServiceInstaller.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataLayer\Databases\BP.DataLayer.Databases.Base\BP.DataLayer.Databases.Base.csproj">
+      <Project>{334496dd-e978-490f-8974-55aad9a328fd}</Project>
+      <Name>BP.DataLayer.Databases.Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataService\BP.DataService.Common\BP.DataService.Common.csproj">
+      <Project>{0cc2f88a-38cb-46c3-b449-5ef3d195c612}</Project>
+      <Name>BP.DataService.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataService\BP.DataService.Interfaces\BP.DataService.Interfaces.csproj">
+      <Project>{c3711d1d-e2b8-4be2-8f9f-61f6b547a934}</Project>
+      <Name>BP.DataService.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataService\BP.DataService.WinService.Contracts\BP.DataService.WinService.Contracts.csproj">
+      <Project>{01aacfab-c028-430c-87b7-c21300b24604}</Project>
+      <Name>BP.DataService.WinService.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataService\BP.DataService.WinService.Interfaces\BP.DataService.WinService.Interfaces.csproj">
+      <Project>{6cf2effb-64cd-4834-b801-8fdaf489fe28}</Project>
+      <Name>BP.DataService.WinService.Interfaces</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

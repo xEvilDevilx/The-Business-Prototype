@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3B01DEB6-91E4-42D4-9735-3FFDD392B126}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BP.DataService.Plugins.Interfaces</RootNamespace>
+    <AssemblyName>BP.DataService.Plugins.Interfaces</AssemblyName>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="IDatabasePlugin.cs" />
+    <Compile Include="IUserPlugin.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\DataLayer\BP.DataLayer.BusinessObjects\BP.DataLayer.BusinessObjects.csproj">
+      <Project>{d9052b55-28e4-4d0c-8e4e-269662adb2bc}</Project>
+      <Name>BP.DataLayer.BusinessObjects</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BP.DataService.Base\BP.DataService.Base.csproj">
+      <Project>{463a00f7-1b24-47cb-b912-b7cf1616351c}</Project>
+      <Name>BP.DataService.Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BP.DataService.Interfaces\BP.DataService.Interfaces.csproj">
+      <Project>{c3711d1d-e2b8-4be2-8f9f-61f6b547a934}</Project>
+      <Name>BP.DataService.Interfaces</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>start /MIN XCopy "$(TargetDir)$(TargetName).*" "$(SolutionDir)\Debug\BP.DataService.TestClientApp.DebugConsole\bin\Debug\Plugins\" /S /R /Y /I /E
+start /MIN XCopy "$(TargetDir)$(TargetName).*" "$(SolutionDir)\Debug\BP.DataService.WinService.Console\bin\Debug\Plugins\" /S /R /Y /I /E</PostBuildEvent>
+  </PropertyGroup>
+</Project>

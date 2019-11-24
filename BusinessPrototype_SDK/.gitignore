@@ -1,0 +1,17 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+/BP.SDK/bin
+/BP.SDK/obj
+/BP.SDK.Base/bin
+/BP.SDK.Base/obj
+/BP.SDK.Interfaces/bin
+/BP.SDK.Interfaces/obj
+/BP.SDK.Extensions/bin
+/BP.SDK.Extensions/obj
+/Tests/BP.SDK.Tests.DebugConsole/bin
+/Tests/BP.SDK.Tests.DebugConsole/obj
+/Tests/BP.SDK.Tests.TestPlugin/bin
+/Tests/BP.SDK.Tests.TestPlugin/obj
