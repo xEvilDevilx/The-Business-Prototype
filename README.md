@@ -11,10 +11,11 @@ Primary this solutions were designing and developing by me for a commercial busi
 3. Start and build BP.Database solution.</br>
 4. Start and build BP.Template solution.
 
-###################################################################################
-### If my source codes will be helpful for you, you can say Thanks by donation: ###
-###   Paypal donate: NewLifeMe@inbox.ru                                         ###
-###   WebMoney RUB:  P952147548227                                              ###
-###   WebMoney USD:  Z803202017434                                              ###
-###   WebMoney EUR:  E848962499508                                              ###
+
+###################################################################################</br>
+If my source codes will be helpful for you, you can say Thanks by donation:</br>
+   Paypal donate: NewLifeMe@inbox.ru                                         
+   WebMoney RUB:  P952147548227                                              
+   WebMoney USD:  Z803202017434                                              
+   WebMoney EUR:  E848962499508                                              
 ###################################################################################
