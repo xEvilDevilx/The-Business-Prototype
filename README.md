@@ -12,7 +12,7 @@ Primary this solutions were designing and developing by me for a commercial busi
 4. Start and build BP.Template solution.
 
 
-###################################################################################</br>
+</br>###################################################################################</br>
 If my source codes will be helpful for you, you can say Thanks by donation:</br>
    Paypal donate: NewLifeMe@inbox.ru                                         
    WebMoney RUB:  P952147548227                                              
